@@ -10,10 +10,27 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			
+	
+		let a = arr[0],
+			b = arr[1];
+
+		for (let i = 2; i < arr.length; i++) {
+		  let currentMin = a < b ? a : b; //3
+		  let currentMax = a > b ? a : b; //
+
+		  if (currentMin < arr[i]) {
+		    a = currentMax; // a = 3
+		    b = arr[i]; // b = 9
+	  }
+	}
+
+		return (a < b ? a : b);
+			if(arr.length < 0 || arr.length == 1)
+			return "-Infinity";
 		}
 
-		function Main() {
+		
+			function Main() {
 			var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
